@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import { MongoClient } from "mongodb";
 import { mentorRouter } from "./mentor.js";
 
@@ -8,6 +9,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT;
 app.use(express.json());
+app.use(cors());
 
 //MONGODB CONNECTION
 const MONGO_URL = process.env.MONGO_URL;
